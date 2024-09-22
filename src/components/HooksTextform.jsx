@@ -30,6 +30,12 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text.value);
   };
 
+//Remove Extra spaces
+const handleExtraSpaces = () => {
+  let newText = text.split(/[ ]+/);
+  setText(newText.join(" "))
+}
+
   //we able to write in form
   const handleOnChange = (event) => {
     setText(event.target.value); //we able to write in form handling events
@@ -68,6 +74,11 @@ export default function TextForm(props) {
 
         <button className="btn btn-success mx-3" onClick={handleCopy}>
           Copy Text
+        </button>
+
+
+        <button className="btn btn-success mx-3 my-3" onClick={handleExtraSpaces}>
+        HandleExtraSpaces
         </button>
       </div>
 
