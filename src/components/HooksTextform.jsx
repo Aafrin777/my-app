@@ -21,7 +21,7 @@ export default function TextForm(props) {
   const handleClearClick = () => {
     let newText = " ";
     setText(newText);
-  };
+  }
 
   //copy text
   const handleCopy = () => {
@@ -43,9 +43,15 @@ const handleExtraSpaces = () => {
 
   const [text, setText] = useState("");
   //text is state here
+   // text = "new text"; wrong way to update the state
+  // setText("new text"); correct way
   return (
     <>
-      <div className="container ">
+      <div className="container"
+        style={{
+          color: props.mode === 'dark' ? 'white' : 'black', // Text color change based on mode
+        }}
+    >
         <h1>project 2 adding more features</h1>
         <h1>{props.heading}</h1>
         <div className="mb-3">
@@ -53,10 +59,17 @@ const handleExtraSpaces = () => {
             className="form-control"
             value={text}
             onChange={handleOnChange}
+           
+            style={{
+              backgroundColor: props.mode === 'dark' ? '#333' : 'white', // Dark mode background for textarea
+              color: props.mode === 'dark' ? 'white' : 'black', // Text color change
+            }}
+
             id="mybox"
             rows="4"
           ></textarea>
         </div>
+{/* in style we used 2 bracket one for java second for object  AND we are saying if out props.mode is dark is become black otherwise remain light*/}
 
         {/* here we created onClicked running function and named it handleUpClick */}
 

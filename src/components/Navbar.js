@@ -35,7 +35,13 @@ export default function Navbar(props) {
         {/* green = success , primary = blue , danger = red */}
   
         <div className={`form-check form-switch text ${props.mode ==='light'?'dark':'light'}`}>    {/*  adding beacket will make it javascript*/}
-  <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+
+  <input className="form-check-input" 
+  onClick={props.toggleMode} 
+  type="checkbox" 
+  role="switch" 
+  id="flexSwitchCheckDefault" />
+
   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark mode</label>
 </div>
     </div>
@@ -46,3 +52,5 @@ export default function Navbar(props) {
 }
 
 //EXTENSION: Auto rename tag help change tag both side
+
+//props.mode ==='light'?'dark':'light' if mode is light turn dark otherwise light

@@ -1,35 +1,60 @@
 //       cd my-app
 //        npm start
 
-import React from 'react'
-import Props from './components/Props'
-import HooksTextform from './components/HooksTextform';
-import Hooksproject from './components/Hooksproject';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'; 
+import AboutUs from './components/AboutUs';
+import About from './About';
+import Navbar from './components/Navbar';
+import Project from './Project';
+import React, { useState } from 'react'; // Correctly importing React and useState together
+
+const AppContent = () => {
+
+    const location = useLocation(); // Use this to check the current URL path
+  
+    // Render nothing for other routes
+    if (location.pathname === '/about') {
+      return <About />; // Only render the About component for /about
+    }
+  
+
+    return (
+      <>
+  <div>
+ <Routes>
+        <Route path="/" element={<AboutUs />} />
+        <Route path="/about" element={<About />} /> {/* About page will render only */}
+      </Routes>
+    </div>
+ </>
+  );
+};
+
 
 const App = () => {
+  //enable dark mode 
+  const [mode, setMode] = useState("light"); {/* whether dark mode is enabled or not */}
+
+const toggleMode = () =>{
+  if(mode === "light"){
+    setMode("dark");
+    document.body.style.backgroundColor = '#17353d';
+  }                              //--CUZ its state we have to put inside bracket
+  else{
+    setMode("light");
+    document.body.style.backgroundColor = 'white';
+  }
+};
   return (
-    <>
-       <Props title = "i AM USING PROPS FOR TITLE"/>
+    <Router>
+<Navbar title = "my navbar" mode = {mode} toggleMode = {toggleMode}/>
+      <Project mode={mode} toggleMode={toggleMode} />
+      <AppContent/>
+    </Router>
+  );
+};
 
-
-       {/* -------Project 1 convertor with hooks-- */}
-       <div className="container ">
-       <Hooksproject heading ="Project 1 convertor with hooks" />  {/*we set mode to balance color*/}
-       </div>
-{/* -------------END-------------------------- */}
-
-
-       {/* adding mre features in hooks projrct */}
-       <div className="container bg-dark text-light">
-<HooksTextform heading ="enter the text to write" />  {/*we set mode to balance color*/}
-</div>
-
-{/* -------------END-------------------------- */}
-    </>
-  )
-}
-
-export default App
+export default App;
 
 
 

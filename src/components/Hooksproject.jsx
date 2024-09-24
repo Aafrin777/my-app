@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-
     const [text, setText] = useState("enter text here");
   //text is state here
 
@@ -29,7 +28,8 @@ export default function TextForm(props) {
   
   return (
     <>
-      <div className="my-5">
+      <div className="my-5"
+         >
         <h1>{props.heading}</h1>
         <div className="mb-3 ">
           <textarea
@@ -54,7 +54,6 @@ export default function TextForm(props) {
 
       <div className="container my-2">
       <h2>your text summary</h2>
-
 {/* -----------for words-------------------for chanacters */}
       <p>{text.split(" ").length} words and {text.length} characters</p>
 
