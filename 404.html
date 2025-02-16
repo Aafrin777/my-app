@@ -30,4 +30,43 @@ npm install gh-pages --save-dev
 5. Deploy the Project
 npm run deploy
 
+ERROOR:
+
+The error ENOENT: no such file or directory,
+
+1. Build the Project
+npm run build
+
+2. Try Deploying Again
+
+npm run deploy
+
+🛠 Additional Fixes (If the Issue Persists)
+
+A. Ensure dist is correctly specified in package.json
+
+If your project is using React (CRA instead of Vite), change dist to build:
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+
+B. Make Sure homepage is Set in package.json
+"homepage": "https://Aafrin777.github.io/my-app-harry-"
+
+
+C. Try Deleting node_modules and Reinstalling
+If the problem still happens, try:
+
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+npm run deploy
+
+
+Your site is live at
+https://aafrin777.github.io/my-app-harry-/
+
+
+
 -->
