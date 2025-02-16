@@ -21,8 +21,9 @@ const Project = (props) => {
 
        {/* -------Project 1 convertor with hooks-- */}
        <div className="container"
-        style={{ backgroundColor: props.mode === 'dark' ? '#0f1b35' : '#f8f9fa' ,   border: '2px solid white' }}>
-       <Hooksproject 
+        style={{ backgroundColor: props.mode === 'dark' ? '#0f1b35' : '#f8f9fa' ,   border: '2px solid white',marginTop: '30px', }}>
+
+       <Hooksproject
        heading ="Project 1 convertor with hooks"
        mode={props.mode} // Pass mode to child components
         />  {/*we set mode to balance color*/}
@@ -31,11 +32,11 @@ const Project = (props) => {
 
 
        {/* adding more features in hooks projrct */}
-       <div className="container" 
+       <div className="container"
  style={{ backgroundColor: props.mode === 'dark' ? '#0f1b35' : '#f8f9fa' ,   border: '2px solid white' ,marginTop: '30px',
-  
+
  }}>
-<HooksTextform heading ="enter the text to write"
+<HooksTextform showAlert={props.showAlert}  heading ="enter the text to write"
         mode={props.mode} // Pass mode to child components
         /> {/*we set mode to balance color*/}
 </div>

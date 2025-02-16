@@ -2,25 +2,31 @@
 
 import React, { useState } from "react";
 
+
 export default function TextForm(props) {
+
+  //uppercase
   //to create upperclick function
   const handleUpClick = () => {
     console.log("Uppercase was clicked" + text); //we will be able to access text variable by + text
 
     let newText = text.toUpperCase();
     setText(newText); //to set text after function work
+    props.showAlert(" Converted to Uppercase", "success");
   };
 
   //Lowercase
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert(" Converted to Lowercase", "success");
   };
 
   //clear Text
   const handleClearClick = () => {
     let newText = " ";
     setText(newText);
+    props.showAlert(" Text has cleared", "success");
   }
 
   //copy text
@@ -28,12 +34,14 @@ export default function TextForm(props) {
     var text = document.getElementById("mybox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert(" Text copied successfully", "success");
   };
 
 //Remove Extra spaces
 const handleExtraSpaces = () => {
   let newText = text.split(/[ ]+/);
   setText(newText.join(" "))
+  props.showAlert(" handled space", "success");
 }
 
   //we able to write in form
@@ -59,7 +67,7 @@ const handleExtraSpaces = () => {
             className="form-control"
             value={text}
             onChange={handleOnChange}
-           
+
             style={{
               backgroundColor: props.mode === 'dark' ? '#333' : 'white', // Dark mode background for textarea
               color: props.mode === 'dark' ? 'white' : 'black', // Text color change

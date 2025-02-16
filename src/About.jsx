@@ -2,9 +2,9 @@
 import React, { useState } from 'react'
 
 
-export default function About() {
-  
-  /* let myStyle = {              
+export default function About(props) {
+
+  /* let myStyle = {
   this is how we style but to enable dark mode on switch
 
   color:'black',
@@ -30,6 +30,7 @@ const toggleStyle =() => {
             border:"1px solid white"
         })
         setBtnText("Enable Light MODE")
+        props.showAlert("Dark mode enabled", "success");
     }
 
     else{
@@ -38,6 +39,7 @@ const toggleStyle =() => {
             backgroundColor:"white"
         })
         setBtnText("Enable Dark MODE")
+        props.showAlert("Light mode enabled", "success");
     }
 }
 
@@ -45,7 +47,7 @@ const toggleStyle =() => {
       <>
 
       {/* mystyle is object */}
-    <div className='container' style={myStyle}>   
+    <div className='container' style={myStyle}>
         <h2 className ="my-2">ABOUT US</h2>
 
       <div className="accordion" id="accordionExample"  style={myStyle}>
@@ -71,4 +73,3 @@ const toggleStyle =() => {
     </>
   )
 }
-

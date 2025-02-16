@@ -17,15 +17,18 @@ export default function TextForm(props) {
 
     let newText = text.toUpperCase();
     setText(newText); //to set text after function work
-    //setText("new text");
+    //setText("new text");{
+    props.showAlert(" Converted to Uppercase", "success");
+    
   };
 
   //we able to write in form
   const handleOnChange = (event) => {
     setText(event.target.value); //we able to write in form handling events
+    props.showAlert(" Changes happened", "success");
   };
 
-  
+
   return (
     <>
       <div className="my-5"
@@ -43,10 +46,10 @@ export default function TextForm(props) {
 
         {/* here we created onClicked running function and named it handleUpClick */}
 
-        <button className="btn btn-danger mx-5" onClick={handleUpClick}>
+        <button className="btn btn-danger mx-5 " onClick={handleUpClick}>
           convert to uppercase
         </button>
-     
+
 
 
 

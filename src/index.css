@@ -11,3 +11,138 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+/* router_project css
+////////////////////////////////////////////////////////////////////////////
+ router_project css */
+
+
+
+ /* General Navigation Bar Styling */
+
+
+  /* Styling for the navigation container */
+
+
+  /* Navigation container */
+  .Router_project {
+list-style: none;
+    background: linear-gradient(145deg,#ca82f3,#360652);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    height: 500px;
+  }
+
+  /* Navigation list items */
+  .routernav-item {
+    list-style: none;
+  }
+
+  /* Balloon-style navigation buttons */
+  .navbar-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    animation: float 3s infinite ease-in-out alternate;
+  }
+
+  /* Assigning different sizes and positions for the balloon effect */
+  .navbar-item:nth-child(1) .navbar-link {
+    background: linear-gradient(145deg, #46030e, #ff7eb3);
+    width: 120px;
+    height: 120px;
+    left: 10%;
+
+  }
+  .navbar-item:nth-child(4) .navbar-link {
+    background: linear-gradient(145deg, #ffb347, #e48509);
+    width: 160px;
+    height: 170px;
+    left: 35%;
+    top: 30%;
+    animation-delay: 0.5s;
+  }
+  .navbar-item:nth-child(5) .navbar-link {
+    background: linear-gradient(145deg, #044e0e, #fffb7d);
+    width: 170px;
+    height: 160px;
+    left: 50%;
+    animation-delay: 1s;
+  }
+  .navbar-item:nth-child(6) .navbar-link {
+    background: linear-gradient(145deg, #f060dd, #0072ff);
+    width: 160px;
+    height: 160px;
+    left: 80%;
+    animation-delay: 1.5s;
+  }
+  .navbar-item:nth-child(7) .navbar-link {
+    background: linear-gradient(145deg, #f8ffae, #093a2a);
+    width: 150px;
+    height: 160px;
+    left: 65%;
+    top: 20%;
+    animation-delay: 2s;
+  }
+  .navbar-item:nth-child(3) .navbar-link {
+    background: linear-gradient(145deg, #b9050b, #fad0c4);
+
+    width: 160px;
+    height: 160px;
+    left: 30%;
+    top: 0%;
+    animation-delay: 2.5s;
+  }
+  .navbar-item:nth-child(2) .navbar-link {
+    background: linear-gradient(145deg, #250425, #fad0c4);
+    width: 150px;
+    height: 160px;
+    left: 10%;
+    top: 20%;
+    animation-delay: 2.5s;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(100px);/*ball speed*/
+    }
+  }
+
+  /* Hover effect to make them pop */
+  .navbar-link:hover {
+    transform: translateY(-30px) scale(1.1);
+    box-shadow: 5px 10px 40px rgb(255, 255, 255);
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .Router_project {
+      height: 500px;
+    }
+    .navbar-link {
+      font-size: 16px;
+      width: 90px !important;
+      height: 90px !important;
+    }
+  }
